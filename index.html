@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Portfólio</title>
+</head>
+
+<body>
+
+    <header>
+        <div>Eduarda Barros<span class="emphasis">.</span></div>
+
+        <nav>
+            <ul>
+                <li>Início</li>
+                <li>Experiência</li>
+                <li>Habilidades</li>
+                <li>Sobre mim</li>
+                <li>Contato</li>
+            </ul>
+        </nav>
+
+        <button id="theme-toggle">☀️</button>
+    </header>
+
+    <main>
+        <section id="hero">
+            <article>
+                <p>Olá, eu sou a Eduarda Barros</p>
+                <p class="title">Desenvolvedora <span class="emphasis">Front</span> End</p>
+                <p>Entusiasta de tecnologia, IA e desenvolvimento web.</p>
+                <div class="buttons">
+                    <button class="primary">Ver Experiência</button>
+                    <button class="outline">Entrar em Contato</button>
+                </div>
+            </article>
+
+            <div class="frame">
+                <!-- SUA FOTO AQUI -->
+                <img src="Eduarda.png" class="floating" alt="Foto de Eduarda">
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 - Portfólio de Eduarda Barros
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById("theme-toggle");
+
+        toggleButton.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+                toggleButton.textContent = "🌙";
+            } else {
+                toggleButton.textContent = "☀️";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
