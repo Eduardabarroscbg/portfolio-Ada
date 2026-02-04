@@ -1,18 +1,21 @@
 # 🌐 Portfólio — Ada
 
-Este repositório contém meu **portfólio pessoal**, desenvolvido durante a trilha de **Front-end do Elas+ Tech**, com foco em aplicar conceitos de **lógica de programação**, **HTML**, **CSS** e boas práticas de interface.
+Este repositório contém meu **portfólio pessoal**, desenvolvido inicialmente durante a trilha de **Front-end do Elas+ Tech** e evoluído de forma contínua como parte da minha formação em **Ciência da Computação**.
 
-O projeto foi iniciado na primeira aula e vem sendo aprimorado ao longo das aulas, incluindo a implementação do **modo escuro (dark mode)**.
+O projeto tem como objetivo apresentar minhas habilidades em **desenvolvimento front-end**, boas práticas de interface e integração básica com **back-end**, incluindo um **formulário de contato funcional com envio de e-mails**.
 
 ---
 
 ## ✨ Funcionalidades
 
-- ✅ Estrutura em HTML semântico  
-- ✅ Estilização com CSS  
-- ✅ Implementação de Dark Mode  
-- ✅ Layout simples e responsivo  
-- ✅ Projeto organizado e de fácil manutenção  
+- ✅ Estrutura em **HTML semântico**
+- ✅ Estilização moderna com **CSS**
+- ✅ Layout **responsivo**
+- ✅ Implementação de **Dark Mode**
+- ✅ Formulário de contato funcional
+- ✅ Envio de mensagens por e-mail (Node.js + Nodemailer)
+- ✅ Validação básica de campos
+- ✅ Projeto organizado e de fácil manutenção
 
 ---
 
@@ -28,20 +31,32 @@ O projeto foi iniciado na primeira aula e vem sendo aprimorado ao longo das aula
 
 ## 🛠️ Tecnologias utilizadas
 
+### Front-end
 - HTML5  
 - CSS3  
 - JavaScript  
+
+### Back-end
+- Node.js  
+- Express  
+- Nodemailer  
+
+### Outros
 - Git e GitHub  
+- GitHub Pages  
 
 ---
 
 ## 📚 Aprendizados
 
 Durante o desenvolvimento deste projeto, pude:
-- Aplicar lógica de programação na prática  
-- Utilizar Git e GitHub para versionamento  
-- Publicar um projeto com GitHub Pages  
-- Evoluir o portfólio a cada aula da trilha  
+
+- Aplicar conceitos de **lógica de programação** na prática  
+- Criar interfaces **responsivas e acessíveis**  
+- Trabalhar com **versionamento usando Git e GitHub**  
+- Publicar projetos com **GitHub Pages**  
+- Integrar front-end com um **back-end simples em Node.js**  
+- Implementar envio de e-mails via formulário de contato  
 
 ---
 
@@ -50,7 +65,7 @@ Durante o desenvolvimento deste projeto, pude:
 **Maria Eduarda da Costa Barros Gonçalves**  
 Desenvolvedora Front-end em formação  
 
-GitHub: https://github.com/eduardabarroscbg
+🔗 GitHub: https://github.com/eduardabarroscbg
 
 ---
 

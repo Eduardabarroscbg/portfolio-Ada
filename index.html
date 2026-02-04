@@ -7,65 +7,552 @@
     <link rel="stylesheet" href="main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Eduarda Barros - Portfólio</title>
 </head>
 
 <body>
-
     <header>
-        <div>Eduarda Barros<span class="emphasis">.</span></div>
-
-        <nav>
+        <div class="logo">Eduarda Barros<span class="emphasis">.</span></div>
+        <nav class="desktop-nav">
             <ul>
-                <li>Início</li>
-                <li>Experiência</li>
-                <li>Habilidades</li>
-                <li>Sobre mim</li>
-                <li>Contato</li>
+                <li class="active" data-section="hero">Início</li>
+                <li data-section="sobre-mim">Sobre Mim</li>
+                <li data-section="habilidades">Habilidades</li>
+                <li data-section="projetos">Experiência</li>
+                <li data-section="contato">Contato</li>
             </ul>
         </nav>
-
-        <button id="theme-toggle">☀️</button>
+        <div class="header-right">
+            <button id="theme-toggle"><i class="fas fa-sun"></i></button>
+            <button class="contact-btn desktop-only" data-section="contato">Contato</button>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
+
+    <!-- Overlay -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- Menu Mobile Lateral -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="menu-title">
+                <span class="bracket">&lt;</span> MENU <span class="bracket">/&gt;</span>
+            </div>
+            <button class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="mobile-nav-links">
+            <li class="active" data-section="hero">Início</li>
+            <li data-section="sobre-mim">Sobre Mim</li>
+            <li data-section="habilidades">Habilidades</li>
+            <li data-section="projetos">Projetos</li>
+            <li data-section="contato">Contato</li>
+        </ul>
+
+        <div class="mobile-nav-footer">
+            <div class="mobile-social-icons">
+                <a href="https://github.com/Eduardabarroscbg" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/eduarda-barroscb/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+            <button class="mobile-contact-btn" data-section="contato">Bora Conversar</button>
+        </div>
+    </nav>
 
     <main>
         <section id="hero">
-            <article>
-                <p>Olá, eu sou a Eduarda Barros</p>
-                <p class="title">Desenvolvedora <span class="emphasis">Front</span> End</p>
-                <p>Entusiasta de tecnologia, IA e desenvolvimento web.</p>
-                <div class="buttons">
-                    <button class="primary">Ver Experiência</button>
-                    <button class="outline">Entrar em Contato</button>
+            <article class="hero-content">
+                <div class="text-content">
+                    <p class="greeting">Olá, eu sou</p>
+                    <h1 class="title">Eduarda Barros</h1>
+                    <h2 class="subtitle">Desenvolvedora <span class="emphasis">Front End</span></h2>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/eduarda-barroscb/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Eduardabarroscbg" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="buttons">
+                        <button class="primary" data-section="contato">Bora conversar <i
+                                class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="frame">
+                        <img src="Eduarda.png" alt="Foto de Eduarda Barros">
+                    </div>
                 </div>
             </article>
+        </section>
 
-            <div class="frame">
-                <!-- SUA FOTO AQUI -->
-                <img src="Eduarda.png" class="floating" alt="Foto de Eduarda">
+        <section id="sobre-mim">
+            <div class="container">
+                <p class="section-label">MINHA JORNADA</p>
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="sobre-content">
+                    <p class="sobre-text">
+                        Olá! Me chamo Eduarda Barros, tenho 20 anos. Atualmente, estou cursando
+                        Análise e Desenvolvimento de Sistemas na FASEC, onde busco uma base
+                        teórica e prática robusta. Minha paixão é traduzir ideias complexas em soluções
+                        digitais eficientes, funcionais e bem arquitetadas.
+                    </p>
+                    <p class="sobre-text">
+                        Com uma base sólida, atuo como Full-Stack, com especialização no
+                        desenvolvimento Back-End em Java - SpringBoot e na gestão de Banco de
+                        Dados SQL. No Front-End, crio interfaces dinâmicas e de alta performance
+                        usando ReactJS. Valorizo o código limpo e a busca incessante por novos
+                        conhecimentos, estando sempre pronto para encarar desafios e contribuir
+                        com projetos que geram valor.
+                    </p>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="info-card-content">
+                                <h3>Formação</h3>
+                                <p>Cursando ADS (5º Período)</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info-card-content">
+                                <h3>Localização</h3>
+                                <p>Palmas, Tocantins</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-code"></i>
+                            <div class="info-card-content">
+                                <h3>Stack Atual</h3>
+                                <p>React, Java & Python</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-heart"></i>
+                            <div class="info-card-content">
+                                <h3>Interesses</h3>
+                                <p>SaaS, Frontend & Backend</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section id="habilidades">
+            <div class="container">
+                <p class="section-label">COMPETÊNCIAS</p>
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-desktop"></i>
+                            <h3>Front-end</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Design Responsivo</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-paint-brush"></i>
+                            <h3>UX/UI Design</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Prototipação</span>
+                            <span class="skill-tag">Design Systems</span>
+                            <span class="skill-tag">Wireframes</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-server"></i>
+                            <h3>Back-end</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">REST API</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-database"></i>
+                            <h3>Banco de Dados</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>DevOps & Tools</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git & GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">NPM</span>
+                            <span class="skill-tag">Vercel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <div class="container">
+                <h2 class="section-title-exp">Experiência<span class="emphasis">.</span></h2>
+                <div class="experience-container">
+                    <div class="company-tabs">
+                        <button class="tab-btn active" data-company="ada">Ada</button>
+                        <button class="tab-btn" data-company="graber">Graber</button>
+                        <button class="tab-btn" data-company="climma">Climma</button>
+                        <button class="tab-btn" data-company="enf">Enf.</button>
+                        <button class="tab-btn" data-company="voluntario">Voluntário</button>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-item active" data-content="ada">
+                            <h3>Desenvolvimento <span class="emphasis">Front-end</span></h3>
+                            <p class="experience-date">Outubro - Abril de 2026</p>
+                            <ul class="experience-list">
+                                <li><i class="fas fa-check"></i>Projeto Elas+ Tech desenvolvida pela Ada Tech e conta
+                                    com o apoio da CAIXA e Artemisia, incluindo aulas ao vivo, conteúdos gravados,
+                                    mentorias e desenvolvimento de soft skills.</li>
+                                <li><i class="fas fa-check"></i>Aprovada na trilha front-end.</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item" data-content="graber">
+                            <h3>Desenvolvimento <span class="emphasis">Full-Stack</span></h3>
+                            <p class="experience-date">Janeiro - Março de 2025</p>
+                            <ul class="experience-list">
+                                <li><i class="fas fa-check"></i>Desenvolvimento de aplicações web completas utilizando
+                                    React no front-end e Spring Boot no back-end.</li>
+                                <li><i class="fas fa-check"></i>Implementação de APIs RESTful e integração com banco de
+                                    dados.</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item" data-content="climma">
+                            <h3>Desenvolvedora <span class="emphasis">Front-end</span></h3>
+                            <p class="experience-date">Junho - Dezembro de 2024</p>
+                            <ul class="experience-list">
+                                <li><i class="fas fa-check"></i>Criação de interfaces responsivas e modernas com React e
+                                    TypeScript.</li>
+                                <li><i class="fas fa-check"></i>Colaboração com equipe de design para implementar
+                                    protótipos do Figma.</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item" data-content="enf">
+                            <h3>Estágio em <span class="emphasis">Desenvolvimento</span></h3>
+                            <p class="experience-date">Março - Junho de 2024</p>
+                            <ul class="experience-list">
+                                <li><i class="fas fa-check"></i>Suporte no desenvolvimento de funcionalidades web.</li>
+                                <li><i class="fas fa-check"></i>Aprendizado de boas práticas de programação e
+                                    versionamento com Git.</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item" data-content="voluntario">
+                            <h3>Desenvolvimento <span class="emphasis">Voluntário</span></h3>
+                            <p class="experience-date">2023 - Presente</p>
+                            <ul class="experience-list">
+                                <li><i class="fas fa-check"></i>Desenvolvimento de sites para ONGs e projetos sociais.
+                                </li>
+                                <li><i class="fas fa-check"></i>Mentoria para iniciantes em programação.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <p class="section-label">CONTATO</p>
+                <h2 class="section-title">Vamos iniciar um projeto?</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-details">
+                                <h3>E-mail</h3>
+                                <p>eduarda10.barros@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-details">
+                                <h3>Localização</h3>
+                                <p>Palmas, Tocantins</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                            <div class="contact-details">
+                                <h3>LinkedIn</h3>
+                                <p>/in/eduarda-barroscb</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form id="formContato" class="contact-form">
+                            <div class="form-group">
+                                <label for="nome">Seu Nome</label>
+                                <input type="text" id="nome" placeholder="Ex: Eduarda Barros" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" placeholder="seu@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem</label>
+                                <textarea id="mensagem" rows="5" placeholder="Como posso te ajudar hoje?"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn" id="btnEnviar">
+                                Enviar Mensagem <i class="fas fa-paper-plane"></i>
+                            </button>
+                            <p id="status"></p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        © 2025 - Portfólio de Eduarda Barros
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title">EDUARDA BARROS<span class="emphasis">.</span></h3>
+                <p class="footer-description">Desenvolvedora Full Stack especializada em criar aplicações robustas com
+                    Java, Python e React. Transformando ideias em código eficiente.</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero" data-section="hero">Início</a></li>
+                    <li><a href="#sobre-mim" data-section="sobre-mim">Sobre Mim</a></li>
+                    <li><a href="#habilidades" data-section="habilidades">Habilidades</a></li>
+                    <li><a href="#projetos" data-section="projetos">Experiência</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Redes Sociais</h4>
+                <ul class="footer-social">
+                    <li><a href="https://github.com/Eduardabarroscbg" target="_blank"><i class="fab fa-github"></i>
+                            GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/eduarda-barroscb/" target="_blank"><i
+                                class="fab fa-linkedin"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Eduarda Barros. Todos os direitos reservados.</p>
+            <p class="footer-credit">Feito por Eduarda Barros</p>
+        </div>
     </footer>
 
     <script>
+        // Theme Toggle
         const toggleButton = document.getElementById("theme-toggle");
-
+        const icon = toggleButton.querySelector("i");
         toggleButton.addEventListener("click", () => {
             document.body.classList.toggle("dark");
-
             if (document.body.classList.contains("dark")) {
-                toggleButton.textContent = "🌙";
+                icon.classList.remove("fa-sun");
+                icon.classList.add("fa-moon");
             } else {
-                toggleButton.textContent = "☀️";
+                icon.classList.remove("fa-moon");
+                icon.classList.add("fa-sun");
+            }
+        });
+
+        // Navigation
+        const navItems = document.querySelectorAll("nav ul li, .mobile-nav-links li");
+
+        // Menu Hamburguer Toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileNav = document.getElementById("mobile-nav");
+        const menuOverlay = document.getElementById("menu-overlay");
+        const closeMenu = document.getElementById("close-menu");
+
+        const openMenu = () => {
+            menuToggle.classList.add("active");
+            mobileNav.classList.add("active");
+            menuOverlay.classList.add("active");
+            document.body.classList.add("menu-open");
+        };
+
+        const closeMenuFunc = () => {
+            menuToggle.classList.remove("active");
+            mobileNav.classList.remove("active");
+            menuOverlay.classList.remove("active");
+            document.body.classList.remove("menu-open");
+        };
+
+        if (menuToggle) {
+            menuToggle.addEventListener("click", openMenu);
+        }
+
+        if (closeMenu) {
+            closeMenu.addEventListener("click", closeMenuFunc);
+        }
+
+        if (menuOverlay) {
+            menuOverlay.addEventListener("click", closeMenuFunc);
+        }
+
+        navItems.forEach(item => {
+            item.addEventListener("click", () => {
+                navItems.forEach(nav => nav.classList.remove("active"));
+                item.classList.add("active");
+                const section = document.getElementById(item.getAttribute("data-section"));
+                if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+
+                // Fechar menu mobile após clicar
+                closeMenuFunc();
+            });
+        });
+
+        // Mobile Contact Button
+        const mobileContactBtn = document.querySelector(".mobile-contact-btn");
+        if (mobileContactBtn) {
+            mobileContactBtn.addEventListener("click", () => {
+                const section = document.getElementById("contato");
+                if (section) {
+                    section.scrollIntoView({ behavior: "smooth", block: "start" });
+                    closeMenuFunc();
+                }
+            });
+        }
+
+        // Scroll Active Section
+        window.addEventListener("scroll", () => {
+            const sections = document.querySelectorAll("section");
+            const scrollPos = window.scrollY + 150;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute("id");
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    navItems.forEach(item => {
+                        item.classList.remove("active");
+                        if (item.getAttribute("data-section") === sectionId) item.classList.add("active");
+                    });
+                }
+            });
+        });
+
+        // Experience Tabs
+        const tabButtons = document.querySelectorAll(".tab-btn");
+        const experienceItems = document.querySelectorAll(".experience-item");
+        tabButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                tabButtons.forEach(btn => btn.classList.remove("active"));
+                experienceItems.forEach(item => item.classList.remove("active"));
+                button.classList.add("active");
+                const activeContent = document.querySelector(`[data-content="${button.getAttribute("data-company")}"]`);
+                if (activeContent) activeContent.classList.add("active");
+            });
+        });
+
+        // Footer Links
+        const footerLinks = document.querySelectorAll(".footer-links a, .footer-social a[data-section]");
+        footerLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                const sectionId = link.getAttribute("data-section");
+                if (sectionId) {
+                    e.preventDefault();
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.scrollIntoView({ behavior: "smooth", block: "start" });
+                        navItems.forEach(nav => nav.classList.remove("active"));
+                        const navItem = document.querySelector(`nav li[data-section="${sectionId}"]`);
+                        if (navItem) navItem.classList.add("active");
+                    }
+                }
+            });
+        });
+
+        // Contact Buttons
+        const contactButtons = document.querySelectorAll(".contact-btn, .primary[data-section='contato']");
+        contactButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const section = document.getElementById("contato");
+                if (section) {
+                    section.scrollIntoView({ behavior: "smooth", block: "start" });
+                    navItems.forEach(nav => nav.classList.remove("active"));
+                    const navItem = document.querySelector(`nav li[data-section="contato"]`);
+                    if (navItem) navItem.classList.add("active");
+                }
+            });
+        });
+
+        // Form Submission with Validation
+        const form = document.getElementById("formContato");
+        const btn = document.getElementById("btnEnviar");
+        const status = document.getElementById("status");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // Validação
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const mensagem = document.getElementById("mensagem").value.trim();
+
+            if (!nome || !email || !mensagem) {
+                status.innerText = "Preencha todos os campos obrigatórios.";
+                status.style.color = "red";
+                return;
+            }
+
+            // Loading state
+            btn.disabled = true;
+            btn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
+            status.innerText = "Enviando mensagem, aguarde...";
+            status.style.color = "#666";
+
+            try {
+                // Chamada para o servidor
+                const response = await fetch("http://localhost:3000/send-email", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name: nome, email, message: mensagem })
+                });
+
+                if (response.ok) {
+                    status.innerText = "Mensagem enviada com sucesso! 💙";
+                    status.style.color = "green";
+                    form.reset();
+                } else {
+                    status.innerText = "Erro ao enviar mensagem. Tente novamente.";
+                    status.style.color = "red";
+                }
+            } catch (error) {
+                status.innerText = "Servidor fora do ar. Tente novamente mais tarde.";
+                status.style.color = "red";
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = 'Enviar Mensagem <i class="fas fa-paper-plane"></i>';
             }
         });
     </script>
-
 </body>
 
 </html>
