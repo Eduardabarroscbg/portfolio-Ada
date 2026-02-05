@@ -103,7 +103,22 @@ tabButtons.forEach(button => {
     });
 });
 
-// Skill Tags - Interatividade removida (apenas hover)
+// Skill Tags - Interatividade para Mobile (clique um por vez)
+const skillTags = document.querySelectorAll(".skill-tag");
+
+skillTags.forEach(tag => {
+    tag.addEventListener("click", () => {
+        // Remove active de todos os outros skill-tags
+        skillTags.forEach(otherTag => {
+            if (otherTag !== tag) {
+                otherTag.classList.remove("active");
+            }
+        });
+        
+        // Toggle active no skill-tag clicado
+        tag.classList.toggle("active");
+    });
+});
 
 // Footer Links
 const footerLinks = document.querySelectorAll(".footer-links a, .footer-social a[data-section]");
