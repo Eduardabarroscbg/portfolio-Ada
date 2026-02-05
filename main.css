@@ -1450,6 +1450,14 @@ body.dark .email-direct-btn {
         gap: 1.5rem;
     }
 
+    /* Desabilitar hover nos skill-tags no mobile */
+    .skill-tag:hover {
+        background: #f8f7ff;
+        color: #666;
+        border-color: transparent;
+        transform: none;
+    }
+
     .skill-category {
         padding: 1.5rem;
     }
@@ -1700,8 +1708,31 @@ body.dark .email-direct-btn {
         font-size: 1.3rem;
     }
 
+    /* Desabilitar hover nos skill-tags no mobile - dark mode */
+    body.dark .skill-tag:hover {
+        background: #1a1a2e;
+        color: #aaa;
+        border-color: transparent;
+        transform: none;
+    }
+
     .skill-tags {
         gap: 0.6rem;
+    }
+
+    /* Desabilitar hover nos skill-tags no mobile */
+    .skill-tag:hover {
+        background: #f8f7ff;
+        color: #666;
+        border-color: transparent;
+        transform: none;
+    }
+
+    body.dark .skill-tag:hover {
+        background: #1a1a2e;
+        color: #aaa;
+        border-color: transparent;
+        transform: none;
     }
 
     .skill-tag {
