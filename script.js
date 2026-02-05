@@ -50,10 +50,13 @@ if (menuOverlay) {
 
 navItems.forEach(item => {
     item.addEventListener("click", () => {
-        navItems.forEach(nav => nav.classList.remove("active"));
-        item.classList.add("active");
         const section = document.getElementById(item.getAttribute("data-section"));
-        if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (section) {
+            // Atualiza apenas se for uma seção válida
+            navItems.forEach(nav => nav.classList.remove("active"));
+            item.classList.add("active");
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
         
         // Fechar menu mobile após clicar
         closeMenuFunc();

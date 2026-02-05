@@ -208,7 +208,18 @@ nav ul li.active {
     transition: all 0.3s;
     position: relative;
     overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    outline: none;
+}
+
+.mobile-nav-links li:active,
+.mobile-nav-links li:focus {
+    background: transparent;
+    color: #1f1f1f;
+    outline: none;
 }
 
 .mobile-nav-links li::before {
@@ -259,7 +270,20 @@ nav ul li.active {
     color: #dd4ec5;
     font-size: 1.3rem;
     transition: 0.3s;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.mobile-social-icons a:active,
+.mobile-social-icons a:focus,
+.mobile-social-icons a:visited {
+    background: rgba(221, 78, 197, 0.1);
+    color: #dd4ec5;
+    outline: none;
 }
 
 .mobile-contact-btn {
@@ -780,6 +804,13 @@ body.dark .mobile-nav-links li {
     color: #fff;
 }
 
+body.dark .mobile-nav-links li:active,
+body.dark .mobile-nav-links li:focus {
+    background: transparent;
+    color: #fff;
+    outline: none;
+}
+
 body.dark .mobile-nav-links li::before {
     background: #ff79c6;
 }
@@ -797,7 +828,19 @@ body.dark .mobile-social-icons a {
     background: rgba(255, 121, 198, 0.1);
     border: 2px solid #ff79c6;
     color: #ff79c6;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    outline: none;
+}
+
+body.dark .mobile-social-icons a:active,
+body.dark .mobile-social-icons a:focus,
+body.dark .mobile-social-icons a:visited {
+    background: rgba(255, 121, 198, 0.1);
+    color: #ff79c6;
+    outline: none;
 }
 
 body.dark .mobile-contact-btn {
