@@ -55,3 +55,4 @@ GitHub: https://github.com/eduardabarroscbg
 ---
 
 ⭐ Fique à vontade para explorar o projeto!
+.
