@@ -905,8 +905,7 @@ body.dark .skill-tag {
     color: #aaa;
 }
 
-body.dark .skill-tag:hover,
-body.dark .skill-tag.active {
+body.dark .skill-tag:hover {
     background: #ff79c6;
     color: #ffffff;
     border-color: #ff79c6;
@@ -1057,11 +1056,9 @@ body.dark .email-direct-btn {
     font-weight: 500;
     transition: 0.3s;
     border: 2px solid transparent;
-    cursor: pointer;
 }
 
-.skill-tag:hover,
-.skill-tag.active {
+.skill-tag:hover {
     background: #dd4ec5;
     color: white;
     border-color: #dd4ec5;
