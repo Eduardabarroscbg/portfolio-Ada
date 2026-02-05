@@ -208,6 +208,7 @@ nav ul li.active {
     transition: all 0.3s;
     position: relative;
     overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-nav-links li::before {
@@ -222,14 +223,12 @@ nav ul li.active {
     transition: transform 0.3s;
 }
 
-.mobile-nav-links li:hover,
 .mobile-nav-links li.active {
     background: rgba(221, 78, 197, 0.15);
     color: #dd4ec5;
     transform: translateX(10px);
 }
 
-.mobile-nav-links li:hover::before,
 .mobile-nav-links li.active::before {
     transform: scaleY(1);
 }
@@ -260,12 +259,7 @@ nav ul li.active {
     color: #dd4ec5;
     font-size: 1.3rem;
     transition: 0.3s;
-}
-
-.mobile-social-icons a:hover {
-    background: #dd4ec5;
-    color: white;
-    transform: translateY(-5px) scale(1.1);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-contact-btn {
@@ -790,7 +784,6 @@ body.dark .mobile-nav-links li::before {
     background: #ff79c6;
 }
 
-body.dark .mobile-nav-links li:hover,
 body.dark .mobile-nav-links li.active {
     background: rgba(255, 121, 198, 0.15);
     color: #ff79c6;
@@ -804,11 +797,7 @@ body.dark .mobile-social-icons a {
     background: rgba(255, 121, 198, 0.1);
     border: 2px solid #ff79c6;
     color: #ff79c6;
-}
-
-body.dark .mobile-social-icons a:hover {
-    background: #ff79c6;
-    color: #1a1a2e;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body.dark .mobile-contact-btn {
