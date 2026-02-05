@@ -127,7 +127,7 @@ nav ul li.active {
     visibility: visible;
 }
 
-/* Menu Mobile Lateral */
+/* Menu Mobile Lateral - SEMPRE ESCURO COM ROSA */
 .mobile-nav {
     position: fixed;
     top: 0;
@@ -753,67 +753,6 @@ body.dark .menu-toggle:hover {
     background: #16213e;
 }
 
-/* Menu mobile já é escuro por padrão, mas ajustamos para modo claro */
-body:not(.dark) .mobile-nav {
-    background: linear-gradient(135deg, #f8f7ff 0%, #ede6ff 100%);
-}
-
-body:not(.dark) .mobile-nav-header {
-    border-bottom-color: rgba(221, 78, 197, 0.2);
-}
-
-body:not(.dark) .menu-title {
-    color: #1f1f1f;
-}
-
-body:not(.dark) .bracket {
-    color: #dd4ec5;
-}
-
-body:not(.dark) .close-menu {
-    background: rgba(221, 78, 197, 0.1);
-    border-color: #dd4ec5;
-    color: #dd4ec5;
-}
-
-body:not(.dark) .close-menu:hover {
-    background: #dd4ec5;
-    color: #fff;
-}
-
-body:not(.dark) .mobile-nav-links li {
-    color: #1f1f1f;
-}
-
-body:not(.dark) .mobile-nav-links li::before {
-    background: #dd4ec5;
-}
-
-body:not(.dark) .mobile-nav-links li:hover,
-body:not(.dark) .mobile-nav-links li.active {
-    background: rgba(221, 78, 197, 0.1);
-    color: #dd4ec5;
-}
-
-body:not(.dark) .mobile-nav-footer {
-    border-top-color: rgba(221, 78, 197, 0.2);
-}
-
-body:not(.dark) .mobile-social-icons a {
-    background: rgba(221, 78, 197, 0.1);
-    border-color: #dd4ec5;
-    color: #dd4ec5;
-}
-
-body:not(.dark) .mobile-social-icons a:hover {
-    background: #dd4ec5;
-    color: #fff;
-}
-
-body:not(.dark) .mobile-contact-btn {
-    background: linear-gradient(90deg, #ff59c8, #b7096c);
-}
-
 body.dark .greeting {
     color: #ff88d0;
 }
@@ -966,7 +905,8 @@ body.dark .skill-tag {
     color: #aaa;
 }
 
-body.dark .skill-tag:hover {
+body.dark .skill-tag:hover,
+body.dark .skill-tag.active {
     background: #ff79c6;
     color: #ffffff;
     border-color: #ff79c6;
@@ -978,10 +918,6 @@ body.dark #projetos {
 
 body.dark .section-title-exp {
     color: #ffffff;
-}
-
-body.dark .company-tabs {
-    /* removido border-left */
 }
 
 body.dark .tab-btn {
@@ -1121,9 +1057,11 @@ body.dark .email-direct-btn {
     font-weight: 500;
     transition: 0.3s;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 
-.skill-tag:hover {
+.skill-tag:hover,
+.skill-tag.active {
     background: #dd4ec5;
     color: white;
     border-color: #dd4ec5;
@@ -1519,11 +1457,18 @@ body.dark .email-direct-btn {
         padding: 1.5rem;
     }
 
+    /* Melhorias para skill-tag no mobile */
+    .skill-tag {
+        font-size: 0.85rem;
+        padding: 0.55rem 1rem;
+    }
+
     .experience-container {
         flex-direction: column;
         gap: 2rem;
     }
 
+    /* Tabs de experiência centralizados no mobile */
     .company-tabs {
         flex-direction: row;
         overflow-x: auto;
@@ -1533,6 +1478,7 @@ body.dark .email-direct-btn {
         padding: 0.5rem;
         display: flex;
         flex-wrap: nowrap;
+        justify-content: center;
     }
 
     .tab-btn {
@@ -1549,10 +1495,27 @@ body.dark .email-direct-btn {
 
     .section-title-exp {
         font-size: 2.2rem;
+        text-align: center;
     }
 
     .experience-item h3 {
         font-size: 1.3rem;
+    }
+
+    /* Melhorias para lista de experiências no mobile */
+    .experience-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .experience-list li {
+        gap: 0.8rem;
+        padding-left: 0;
+    }
+
+    .experience-list i {
+        margin-top: 0.2rem;
+        font-size: 0.85rem;
     }
 
     .contact-cta-wrapper {
@@ -1604,7 +1567,7 @@ body.dark .email-direct-btn {
 
     .mobile-nav {
         display: block;
-        top: 70px;
+        max-width: 100%;
     }
 
     .desktop-only {
@@ -1725,6 +1688,7 @@ body.dark .email-direct-btn {
 
     .info-card-content p {
         font-size: 0.85rem;
+        line-height: 1.4;
     }
 
     .skill-category {
@@ -1739,20 +1703,26 @@ body.dark .email-direct-btn {
         font-size: 1.3rem;
     }
 
+    .skill-tags {
+        gap: 0.6rem;
+    }
+
     .skill-tag {
         padding: 0.5rem 1rem;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .section-title-exp {
         font-size: 1.8rem;
         margin-bottom: 2rem;
+        text-align: center;
     }
 
     .company-tabs {
         gap: 0.4rem;
         padding: 0.5rem 0;
         margin-bottom: 1rem;
+        justify-content: center;
     }
 
     .tab-btn {
@@ -1780,18 +1750,20 @@ body.dark .email-direct-btn {
     }
 
     .experience-list {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 0.8rem 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
     }
 
     .experience-list li {
-        font-size: 0.9rem;
-        gap: 0.8rem;
+        font-size: 0.88rem;
+        gap: 0.7rem;
+        padding-left: 0;
+        line-height: 1.5;
     }
 
     .experience-list i {
         font-size: 0.8rem;
-        margin-top: 0.2rem;
+        margin-top: 0.15rem;
     }
 
     .contact-card {

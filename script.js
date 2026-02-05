@@ -103,6 +103,15 @@ tabButtons.forEach(button => {
     });
 });
 
+// Skill Tags - Adicionar interatividade para rosa neon ao clicar
+const skillTags = document.querySelectorAll(".skill-tag");
+
+skillTags.forEach(tag => {
+    tag.addEventListener("click", () => {
+        tag.classList.toggle("active");
+    });
+});
+
 // Footer Links
 const footerLinks = document.querySelectorAll(".footer-links a, .footer-social a[data-section]");
 
