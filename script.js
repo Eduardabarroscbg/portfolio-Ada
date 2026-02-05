@@ -144,4 +144,4 @@ contactButtons.forEach(button => {
             if (navItem) navItem.classList.add("active");
         }
     });
-});.
+});
