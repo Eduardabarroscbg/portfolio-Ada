@@ -50,12 +50,12 @@ if (menuOverlay) {
 
 navItems.forEach(item => {
     item.addEventListener("click", () => {
+        navItems.forEach(nav => nav.classList.remove("active"));
+        item.classList.add("active");
         const section = document.getElementById(item.getAttribute("data-section"));
         if (section) {
-            // Atualiza apenas se for uma seção válida
-            navItems.forEach(nav => nav.classList.remove("active"));
-            item.classList.add("active");
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
+            const offsetTop = section.offsetTop - 100; // 100px de espaço acima da seção
+            window.scrollTo({ top: offsetTop, behavior: "smooth" });
         }
         
         // Fechar menu mobile após clicar
@@ -69,7 +69,8 @@ if (mobileContactBtn) {
     mobileContactBtn.addEventListener("click", () => {
         const section = document.getElementById("contato");
         if (section) {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
+            const offsetTop = section.offsetTop - 100;
+            window.scrollTo({ top: offsetTop, behavior: "smooth" });
             closeMenuFunc();
         }
     });
@@ -106,20 +107,15 @@ tabButtons.forEach(button => {
     });
 });
 
-// Skill Tags - Interatividade para Mobile (clique um por vez)
+// Skill Tags - Clique único (apenas um ativo por vez)
 const skillTags = document.querySelectorAll(".skill-tag");
 
 skillTags.forEach(tag => {
     tag.addEventListener("click", () => {
-        // Remove active de todos os outros skill-tags
-        skillTags.forEach(otherTag => {
-            if (otherTag !== tag) {
-                otherTag.classList.remove("active");
-            }
-        });
-        
-        // Toggle active no skill-tag clicado
-        tag.classList.toggle("active");
+        // Remove active de todas as tags
+        skillTags.forEach(t => t.classList.remove("active"));
+        // Adiciona active apenas na tag clicada
+        tag.classList.add("active");
     });
 });
 
@@ -133,7 +129,8 @@ footerLinks.forEach(link => {
             e.preventDefault();
             const section = document.getElementById(sectionId);
             if (section) {
-                section.scrollIntoView({ behavior: "smooth", block: "start" });
+                const offsetTop = section.offsetTop - 100;
+                window.scrollTo({ top: offsetTop, behavior: "smooth" });
                 navItems.forEach(nav => nav.classList.remove("active"));
                 const navItem = document.querySelector(`nav li[data-section="${sectionId}"]`);
                 if (navItem) navItem.classList.add("active");
@@ -149,7 +146,8 @@ contactButtons.forEach(button => {
     button.addEventListener("click", () => {
         const section = document.getElementById("contato");
         if (section) {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
+            const offsetTop = section.offsetTop - 100;
+            window.scrollTo({ top: offsetTop, behavior: "smooth" });
             navItems.forEach(nav => nav.classList.remove("active"));
             const navItem = document.querySelector(`nav li[data-section="contato"]`);
             if (navItem) navItem.classList.add("active");
