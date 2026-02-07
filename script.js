@@ -154,3 +154,16 @@ contactButtons.forEach(button => {
         }
     });
 });
+
+// Footer Logo - Voltar ao topo
+const footerLogo = document.querySelector(".footer-title");
+
+if (footerLogo) {
+    footerLogo.style.cursor = "pointer";
+    footerLogo.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        navItems.forEach(nav => nav.classList.remove("active"));
+        const heroNavItem = document.querySelector(`nav li[data-section="hero"]`);
+        if (heroNavItem) heroNavItem.classList.add("active");
+    });
+}
