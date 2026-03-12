@@ -18,7 +18,7 @@ const projectsData = {
     collaborators: []
   },
   "02": {
-    title: "Mercedes-AMG F1<br>Landing Page",
+    title: "Mercedes-AMG F1",
     breadcrumb: "Mercedes-AMG F1 Landing Page",
     description: "Projeto inspirado na equipe Mercedes-AMG Petronas Formula One Team, desenvolvido com React, Three.js e GSAP. A aplicação apresenta um visualizador 3D interativo do carro da equipe, animações baseadas em scroll e integração com a Ergast Developer API para exibir classificações reais de pilotos e construtores.",
     image: "mercedes.png",
@@ -72,7 +72,7 @@ const projectsData = {
     ]
   },
   "05": {
-    title: "Sushi Saboroso<br>Restaurante Japonês",
+    title: "Sushi Saboroso - Restaurante Japonês",
     breadcrumb: "Sushi Saboroso — Restaurante",
     description: "Website completo de restaurante japonês — responsivo, animado e interativo. Conta com hero em vídeo loop, cardápio com filtro por categoria (Sushi, Ramen, Outros), lightbox nas fotos dos pratos com navegação por setas, teclado e swipe, além de newsletter com validação de e-mail e botão de scroll to top.",
     image: "sushi saboroso.png",

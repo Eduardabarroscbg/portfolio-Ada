@@ -458,14 +458,23 @@
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
+
+    /* Transforma o grid em flex coluna para usar order */
     .detail-body {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         padding: 2rem 1.5rem 4rem;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .detail-right {
         position: static;
+        /* Remove o display:flex interno para os filhos usarem order no pai */
+        display: contents;
+    }
+
+    .detail-left {
+        display: contents;
     }
 
     .detail-topbar {
@@ -474,6 +483,39 @@
 
     .detail-title {
         font-size: 2rem;
+    }
+
+    /* ✅ ORDEM MOBILE: 1) Título  2) Foto  3) Funcionalidades  4) Resto */
+    .detail-title-block {
+        order: 1;
+    }
+
+    .detail-screenshot {
+        order: 2;
+    }
+
+    .detail-features-card {
+        order: 3;
+    }
+
+    .detail-description {
+        order: 4;
+    }
+
+    .detail-stats {
+        order: 5;
+    }
+
+    .detail-actions {
+        order: 6;
+    }
+
+    .detail-tech-section {
+        order: 7;
+    }
+
+    .detail-collab-section {
+        order: 8;
     }
 }
 
