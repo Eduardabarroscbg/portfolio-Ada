@@ -94,6 +94,7 @@
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     transition: all 0.2s;
+    white-space: nowrap;
 }
 
 .detail-back-btn:hover {
@@ -102,25 +103,10 @@
     color: var(--pink);
 }
 
-.detail-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.detail-breadcrumb-label {
     font-size: 0.82rem;
     color: var(--text-3);
-    overflow: hidden;
-}
-
-.detail-breadcrumb span {
-    color: var(--text-3);
-    white-space: nowrap;
-}
-
-.detail-breadcrumb .bc-active {
-    color: var(--text-2);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-weight: 500;
 }
 
 /* ── Main content ── */
@@ -141,10 +127,14 @@
     gap: 2rem;
 }
 
+/* ✅ Título centralizado */
 .detail-title-block {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
 .detail-title {
@@ -153,6 +143,9 @@
     font-weight: 800;
     color: var(--text);
     line-height: 1.1;
+    text-align: center !important;
+    width: 100%;
+    display: block;
 }
 
 .detail-title-underline {
@@ -161,6 +154,7 @@
     border-radius: 9999px;
     background: linear-gradient(90deg, var(--pink), var(--pink-deep));
     box-shadow: 0 0 12px var(--pink-glow);
+    margin: 0 auto;
 }
 
 .detail-description {
@@ -218,37 +212,39 @@
     color: var(--text-3);
 }
 
-/* Action buttons */
+/* ── Action buttons — tamanho compacto ── */
 .detail-actions {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
 }
 
 .detail-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
-    padding: 0.8rem 1.8rem;
-    border-radius: 12px;
-    font-size: 0.92rem;
+    gap: 0.45rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 10px;
+    font-size: 0.82rem;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.25s;
     border: none;
+    width: fit-content;
+    white-space: nowrap;
 }
 
 .detail-btn-demo {
     background: linear-gradient(90deg, var(--pink), var(--pink-deep));
     color: white;
-    box-shadow: 0 4px 20px var(--pink-glow);
+    box-shadow: 0 4px 16px var(--pink-glow);
 }
 
 .detail-btn-demo:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px var(--pink-glow);
+    box-shadow: 0 8px 24px var(--pink-glow);
     opacity: 0.92;
 }
 
@@ -464,19 +460,19 @@
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
 
-    /* Vira flex coluna para controlar order */
+    /* Flex coluna para controlar order */
     .detail-body {
         display: flex;
         flex-direction: column;
+        align-items: stretch;
         padding: 1.5rem 1.25rem 5rem;
         gap: 1.25rem;
-        /* Garante que nada vaze para fora */
         overflow-x: hidden;
         box-sizing: border-box;
         width: 100%;
     }
 
-    /* Dissolve as colunas para os filhos participarem do flex pai */
+    /* Dissolve colunas */
     .detail-left,
     .detail-right {
         display: contents;
@@ -486,7 +482,16 @@
         padding: 0.85rem 1.25rem;
     }
 
-    /* ✅ ORDEM: 1) Título  2) Foto  3) Funcionalidades  4) Descrição  5) Stats  6) Botões  7) Techs  8) Colaboradores */
+    /* ✅ ORDEM MOBILE:
+       1. Título
+       2. Foto
+       3. Stats
+       4. Botões
+       5. Descrição
+       6. Principais Recursos
+       7. Tecnologias Utilizadas
+       8. Colaboradores
+    */
     .detail-title-block {
         order: 1;
     }
@@ -495,19 +500,19 @@
         order: 2;
     }
 
-    .detail-features-card {
+    .detail-stats {
         order: 3;
     }
 
-    .detail-description {
+    .detail-actions {
         order: 4;
     }
 
-    .detail-stats {
+    .detail-description {
         order: 5;
     }
 
-    .detail-actions {
+    .detail-features-card {
         order: 6;
     }
 
@@ -519,28 +524,41 @@
         order: 8;
     }
 
-    /* ✅ Título centralizado */
+    /* Título centralizado */
     .detail-title-block {
+        display: flex;
+        flex-direction: column;
         text-align: center;
         align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .detail-title {
         font-size: 1.8rem;
-        text-align: center;
+        text-align: center !important;
+        width: 100%;
+        display: block;
     }
 
     .detail-title-underline {
         margin: 0 auto;
     }
 
-    /* ✅ Descrição centralizada */
+    /* Descrição */
     .detail-description {
-        text-align: center;
+        text-align: left;
         font-size: 0.95rem;
     }
 
-    /* ✅ Stats: dois cards lado a lado, sem vazar */
+    /* Screenshot */
+    .detail-screenshot {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Stats lado a lado */
     .detail-stats {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -570,24 +588,26 @@
         font-size: 0.72rem;
     }
 
-    /* ✅ Botões lado a lado no mobile */
+    /* ✅ Botões: lado a lado, tamanho automático (não esticam até a borda) */
     .detail-actions {
         flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.75rem;
+        justify-content: flex-start;
+        gap: 0.6rem;
         width: 100%;
         box-sizing: border-box;
+        flex-wrap: nowrap;
     }
 
     .detail-btn {
-        flex: 1;
-        justify-content: center;
-        padding: 0.75rem 1rem;
-        font-size: 0.88rem;
-        min-width: 0;
+        flex: 0 0 auto;
+        padding: 0.5rem 0.9rem;
+        font-size: 0.78rem;
+        border-radius: 9px;
+        gap: 0.35rem;
+        white-space: nowrap;
     }
 
-    /* ✅ Tech chips: wrap correto, sem cortar */
+    /* Tech chips */
     .detail-tech-chips {
         display: flex;
         flex-wrap: wrap;
@@ -601,17 +621,11 @@
         padding: 0.4rem 0.85rem;
     }
 
-    /* ✅ Features card ocupa largura total */
+    /* Features */
     .detail-features-card {
         width: 100%;
         box-sizing: border-box;
         padding: 1.4rem;
-    }
-
-    /* ✅ Screenshot ocupa largura total */
-    .detail-screenshot {
-        width: 100%;
-        box-sizing: border-box;
     }
 }
 
@@ -630,7 +644,7 @@
     }
 
     .detail-btn {
-        font-size: 0.82rem;
-        padding: 0.7rem 0.75rem;
+        font-size: 0.78rem;
+        padding: 0.5rem 0.9rem;
     }
 }

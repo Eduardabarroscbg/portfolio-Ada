@@ -18,8 +18,8 @@ const projectsData = {
     collaborators: []
   },
   "02": {
-    title: "Mercedes-AMG F1",
-    breadcrumb: "Mercedes-AMG F1",
+    title: "Mercedes-AMG F1<br>Landing Page",
+    breadcrumb: "Mercedes-AMG F1 Landing Page",
     description: "Projeto inspirado na equipe Mercedes-AMG Petronas Formula One Team, desenvolvido com React, Three.js e GSAP. A aplicação apresenta um visualizador 3D interativo do carro da equipe, animações baseadas em scroll e integração com a Ergast Developer API para exibir classificações reais de pilotos e construtores.",
     image: "mercedes.png",
     stats: { techs: "4", features: "4" },
@@ -72,7 +72,7 @@ const projectsData = {
     ]
   },
   "05": {
-    title: "Sushi Saboroso Restaurante Japonês",
+    title: "Sushi Saboroso<br>Restaurante Japonês",
     breadcrumb: "Sushi Saboroso — Restaurante",
     description: "Website completo de restaurante japonês — responsivo, animado e interativo. Conta com hero em vídeo loop, cardápio com filtro por categoria (Sushi, Ramen, Outros), lightbox nas fotos dos pratos com navegação por setas, teclado e swipe, além de newsletter com validação de e-mail e botão de scroll to top.",
     image: "sushi saboroso.png",
@@ -92,19 +92,16 @@ const projectsData = {
 };
 
 // ==================== CREATE OVERLAY ====================
+// Topbar: só botão "Voltar" + "Projetos ›" sem repetir o nome do projeto
 const overlayHTML = `
 <div class="project-detail-overlay" id="project-detail-overlay">
   <div class="detail-backdrop" id="detail-backdrop"></div>
   <div class="detail-panel" id="detail-panel">
     <div class="detail-topbar">
       <button class="detail-back-btn" id="detail-back-btn">
-        <i class="fas fa-arrow-left"></i> Back
+        <i class="fas fa-arrow-left"></i> Voltar
       </button>
-      <div class="detail-breadcrumb">
-        <span>Projects</span>
-        <span>›</span>
-        <span class="bc-active" id="detail-breadcrumb-name"></span>
-      </div>
+      <span class="detail-breadcrumb-label">Projetos</span>
     </div>
     <div class="detail-body">
       <div class="detail-left">
@@ -116,7 +113,7 @@ const overlayHTML = `
         <div class="detail-animate detail-stats" id="detail-stats"></div>
         <div class="detail-animate detail-actions" id="detail-actions"></div>
         <div class="detail-animate detail-tech-section">
-          <h4><i class="fas fa-code"></i> Technologies Used</h4>
+          <h4><i class="fas fa-code"></i> Tecnologias Utilizadas</h4>
           <div class="detail-tech-chips" id="detail-techs"></div>
         </div>
         <div class="detail-animate detail-collab-section" id="detail-collab-section" style="display:none">
@@ -126,11 +123,11 @@ const overlayHTML = `
       </div>
       <div class="detail-right">
         <div class="detail-animate detail-screenshot">
-          <img id="detail-screenshot-img" src="" alt="Project screenshot">
+          <img id="detail-screenshot-img" src="" alt="Screenshot do projeto">
           <div class="detail-screenshot-shine"></div>
         </div>
         <div class="detail-animate detail-features-card">
-          <h4><i class="fas fa-star"></i> Principais recursos</h4>
+          <h4><i class="fas fa-star"></i> Principais Recursos</h4>
           <ul class="detail-features-list" id="detail-features"></ul>
         </div>
       </div>
@@ -142,7 +139,6 @@ document.body.insertAdjacentHTML('beforeend', overlayHTML);
 
 // ==================== HELPERS ====================
 function removeMask() {
-  // Remove the <style> injected by the inline script in <head>
   const mask = document.getElementById("project-load-mask");
   if (mask) mask.remove();
 }
@@ -151,10 +147,9 @@ function populateDetail(index) {
   const data = projectsData[index];
   if (!data) return;
 
-  document.getElementById("detail-breadcrumb-name").textContent = data.breadcrumb;
-  document.getElementById("detail-title").innerHTML             = data.title;
-  document.getElementById("detail-description").textContent     = data.description;
-  document.getElementById("detail-screenshot-img").src          = data.image;
+  document.getElementById("detail-title").innerHTML         = data.title;
+  document.getElementById("detail-description").textContent = data.description;
+  document.getElementById("detail-screenshot-img").src      = data.image;
 
   document.getElementById("detail-stats").innerHTML = `
     <div class="detail-stat-card">
@@ -168,7 +163,7 @@ function populateDetail(index) {
 
   let actionsHTML = `<a href="${data.github}" target="_blank" class="detail-btn detail-btn-github"><i class="fab fa-github"></i> GitHub</a>`;
   if (data.demo) {
-    actionsHTML = `<a href="${data.demo}" target="_blank" class="detail-btn detail-btn-demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>` + actionsHTML;
+    actionsHTML = `<a href="${data.demo}" target="_blank" class="detail-btn detail-btn-demo"><i class="fas fa-external-link-alt"></i> Ver Projeto</a>` + actionsHTML;
   }
   document.getElementById("detail-actions").innerHTML = actionsHTML;
 
@@ -239,8 +234,6 @@ window.addEventListener("popstate", () => {
 });
 
 // ==================== RESTORE ON LOAD ====================
-// The <head> inline script already hid main/footer/header via CSS.
-// Here we just open the overlay and remove the mask once DOM is ready.
 const _hash  = window.location.hash.match(/^#project-(\d+)$/);
 const _index = _hash ? _hash[1] : null;
 
@@ -253,11 +246,9 @@ if (_index && projectsData[_index]) {
     panel.scrollTop = 0;
     document.documentElement.style.overflow = "hidden";
 
-    // Show overlay synchronously — no animation needed, mask already hid everything
     overlay.style.display = "flex";
     overlay.classList.add("active");
 
-    // Remove mask: main/footer are now safely behind the open overlay
     removeMask();
   });
 }
