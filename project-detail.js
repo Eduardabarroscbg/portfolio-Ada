@@ -18,7 +18,7 @@ const projectsData = {
     collaborators: []
   },
   "02": {
-    title: "Mercedes-AMG F1<br>Landing Page",
+    title: "Mercedes-AMG F1",
     breadcrumb: "Mercedes-AMG F1 Landing Page",
     description: "Projeto inspirado na equipe Mercedes-AMG Petronas Formula One Team, desenvolvido com React, Three.js e GSAP. A aplicação apresenta um visualizador 3D interativo do carro da equipe, animações baseadas em scroll e integração com a Ergast Developer API para exibir classificações reais de pilotos e construtores.",
     image: "mercedes.png",
