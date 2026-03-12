@@ -4,68 +4,573 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== ANTI-FLASH: hide page instantly if loading a project URL ===== -->
+    <!-- Must be the FIRST script in <head>, before any CSS or rendering -->
+    <script>
+        (function () {
+            var match = window.location.hash.match(/^#project-(\d+)$/);
+            if (match) {
+                var s = document.createElement('style');
+                s.id = 'project-load-mask';
+                s.textContent = 'body { visibility: hidden !important; }';
+                document.head.appendChild(s);
+            }
+        })();
+    </script>
+
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="project-detail.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>Portfólio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Eduarda Barros — Front End Developer</title>
 </head>
 
-<body>
+<body class="dark">
 
-    <header>
-        <div>Eduarda Barros<span class="emphasis">.</span></div>
+    <div id="global-blob-1"></div>
+    <div id="global-blob-2"></div>
+    <div id="global-blob-3"></div>
 
-        <nav>
-            <ul>
-                <li>Início</li>
-                <li>Experiência</li>
-                <li>Habilidades</li>
-                <li>Sobre mim</li>
-                <li>Contato</li>
+    <header id="main-header">
+        <nav class="nav-island" id="nav-island">
+            <ul class="nav-links">
+                <li class="nav-item active" data-section="hero">Início</li>
+                <li class="nav-item" data-section="sobre-mim">Sobre</li>
+                <li class="nav-item" data-section="habilidades">Skills</li>
+                <li class="nav-item" data-section="projetos">Projetos</li>
+                <li class="nav-item" data-section="Experiências">Experiências</li>
+                <li class="nav-item nav-cta" data-section="contato">Contato</li>
             </ul>
         </nav>
-
-        <button id="theme-toggle">☀️</button>
+        <div class="mobile-header">
+            <div class="logo-mobile">Eduarda<span class="emphasis">.</span></div>
+            <div class="mobile-controls">
+                <button class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></button>
+            </div>
+        </div>
     </header>
 
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="menu-title"><span class="bracket">&lt;</span> MENU <span class="bracket">/&gt;</span></div>
+            <button type="button" class="close-menu" id="close-menu" aria-label="Fechar menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li class="active" data-section="hero">Início</li>
+            <li data-section="sobre-mim">Sobre Mim</li>
+            <li data-section="habilidades">Habilidades</li>
+            <li data-section="projetos">Projetos</li>
+            <li data-section="Experiências">Experiências</li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <div class="mobile-social-icons">
+                <a href="https://github.com/Eduardabarroscbg" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/eduarda-barroscb/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+            <button class="mobile-contact-btn" data-section="contato">Bora Conversar</button>
+        </div>
+    </nav>
+
     <main>
+
+        <!-- ===== HERO ===== -->
         <section id="hero">
-            <article>
-                <p>Olá, eu sou a Eduarda Barros</p>
-                <p class="title">Desenvolvedora <span class="emphasis">Front</span> End</p>
-                <p>Entusiasta de tecnologia, IA e desenvolvimento web.</p>
-                <div class="buttons">
-                    <button class="primary">Ver Experiência</button>
-                    <button class="outline">Entrar em Contato</button>
+            <article class="hero-content">
+                <div class="text-content">
+                    <p class="greeting">Olá, eu sou</p>
+                    <h1 class="title">Eduarda Barros</h1>
+                    <h2 class="subtitle">Desenvolvedora <span class="emphasis">Front End</span></h2>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/eduarda-barroscb/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Eduardabarroscbg" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="buttons">
+                        <button class="primary" data-section="contato">Bora conversar <i
+                                class="fas fa-paper-plane"></i></button>
+                        <button class="outline" data-section="projetos">Ver projetos <i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="frame">
+                        <img src="Eduarda.png" alt="Foto de Eduarda Barros">
+                    </div>
                 </div>
             </article>
+        </section>
 
-            <div class="frame">
-                <!-- SUA FOTO AQUI -->
-                <img src="Eduarda.png" class="floating" alt="Foto de Eduarda">
-
+        <!-- ===== SOBRE MIM ===== -->
+        <section id="sobre-mim">
+            <div class="container">
+                <p class="section-label">MINHA JORNADA</p>
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="sobre-content">
+                    <p class="sobre-text">Olá! Me chamo Eduarda Barros, tenho 20 anos e sou desenvolvedora front-end,
+                        apaixonada por criar interfaces responsivas, intuitivas e eficientes, com foco na experiência do
+                        usuário. Tenho experiência com HTML, CSS, JavaScript, React e TypeScript, e estou sempre me
+                        atualizando para desenvolver aplicações modernas e acessíveis.</p>
+                    <p class="sobre-text">Atualmente, curso Ciência da Computação no UNIPÊ – Campus João Pessoa e atuo
+                        como Tech Leader de Front-end na Fábrica de Software, onde sou responsável por implementar
+                        interfaces, criar layouts e definir padrões visuais e de usabilidade.</p>
+                    <div class="info-cards">
+                        <div class="info-card"><i class="fas fa-graduation-cap"></i>
+                            <div class="info-card-content">
+                                <h3>Formação</h3>
+                                <p>Ciência da Computação — 7º período</p>
+                            </div>
+                        </div>
+                        <div class="info-card"><i class="fas fa-map-marker-alt"></i>
+                            <div class="info-card-content">
+                                <h3>Localização</h3>
+                                <p>João Pessoa, Paraíba</p>
+                            </div>
+                        </div>
+                        <div class="info-card"><i class="fas fa-code"></i>
+                            <div class="info-card-content">
+                                <h3>Stack Atual</h3>
+                                <p>React, TypeScript & JavaScript</p>
+                            </div>
+                        </div>
+                        <div class="info-card"><i class="fas fa-heart"></i>
+                            <div class="info-card-content">
+                                <h3>Interesses</h3>
+                                <p>Front-end, UX/UI, Cloud & IA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- ===== HABILIDADES ===== -->
+        <section id="habilidades">
+            <div class="container">
+                <p class="section-label">COMPETÊNCIAS</p>
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                alt="HTML5"></div><span class="tech-name">HTML</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                alt="CSS3"></div><span class="tech-name">CSS</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                alt="JavaScript"></div><span class="tech-name">JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                                alt="TypeScript"></div><span class="tech-name">TypeScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                alt="React"></div><span class="tech-name">React</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+                                alt="Next.js" style="filter: invert(1) brightness(2);"></div><span
+                            class="tech-name">Next.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                                alt="Tailwind CSS"></div><span class="tech-name">Tailwind CSS</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+                                alt="Sass"></div><span class="tech-name">Sass</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                                alt="Bootstrap"></div><span class="tech-name">Bootstrap</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
+                                alt="Vite"></div><span class="tech-name">Vite</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                alt="Node.js"></div><span class="tech-name">Node.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                                alt="Firebase"></div><span class="tech-name">Firebase</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
+                                alt="Material UI"></div><span class="tech-name">Material UI</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                                alt="Figma"></div><span class="tech-name">Figma</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg"
+                                alt="Vercel" style="filter: invert(1) brightness(2);"></div><span
+                            class="tech-name">Vercel</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon-wrap"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="12" fill="rgba(244,114,182,0.15)" /><text x="50%"
+                                    y="56%" dominant-baseline="middle" text-anchor="middle" font-size="22"
+                                    font-weight="900" font-family="Georgia, serif" fill="#f472b6">SA</text>
+                            </svg></div><span class="tech-name">SweetAlert2</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJETOS ===== -->
+        <section id="projetos">
+            <div class="container">
+                <p class="section-label">TRABALHOS</p>
+                <h2 class="section-title">Projetos em Destaque</h2>
+                <p class="section-subtitle">Projetos que construí para aprender e crescer</p>
+
+                <div class="projects-grid">
+
+                    <!-- Card 01 -->
+                    <div class="project-card" data-index="01">
+                        <div class="project-thumb">
+                            <img src="macbook-landing.bxduO2K2.png" alt="Apple MacBook Landing Page">
+                            <div class="project-thumb-overlay"></div>
+                        </div>
+                        <div class="project-card-inner">
+                            <h3 class="project-title">Apple MacBook Landing Page</h3>
+                            <p class="project-desc">Landing page inspirada no MacBook Pro da Apple, com modelos 3D
+                                interativos e animações avançadas baseadas em scroll.
+
+                                Desenvolvida com React, Three.js, GSAP e Tailwind CSS, a aplicação apresenta design
+                                responsivo, conteúdo localizado em português e uma experiência visual moderna focada em
+                                performance e interatividade.</p>
+                            <div class="project-tags">
+                                <span class="ptag">React</span><span class="ptag">Three.js</span><span
+                                    class="ptag">GSAP</span><span class="ptag">Tailwind</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://apple-macbook-landing-i9ljqvcur-eduardas-projects-ea372f5b.vercel.app"
+                                    target="_blank" class="project-link-btn github-btn"><i class="fab fa-github"></i>
+                                    Live Demo</a>
+                                <a href="#" target="_blank" class="project-link-btn demo-btn">Details <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-card-glow"></div>
+                    </div>
+
+                    <!-- Card 02 -->
+                    <div class="project-card" data-index="02">
+                        <div class="project-thumb">
+                            <img src="mercedes.png" alt="Mercedes-AMG F1">
+                            <div class="project-thumb-overlay"></div>
+                        </div>
+                        <div class="project-card-inner">
+                            <h3 class="project-title">Mercedes-AMG F1 </h3>
+                            <p class="project-desc">Projeto inspirado na equipe Mercedes-AMG Petronas Formula One Team,
+                                desenvolvido com React, Three.js e GSAP. A aplicação apresenta um visualizador 3D
+                                interativo do carro da equipe, animações baseadas em scroll e integração com a Ergast
+                                Developer API para exibir classificações reais de pilotos e construtores.
+
+                                Possui design responsivo com Tailwind CSS, navegação entre páginas com React Router e
+                                foco em uma experiência visual moderna e interativa.</p>
+                            <div class="project-tags">
+                                <span class="ptag">React</span><span class="ptag">Three.js</span><span
+                                    class="ptag">GSAP</span><span class="ptag">API REST</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://mercedes-f1.vercel.app" target="_blank"
+                                    class="project-link-btn github-btn"><i class="fab fa-github"></i> Live Demo</a>
+                                <a href="#" target="_blank" class="project-link-btn demo-btn">Details <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-card-glow"></div>
+                    </div>
+
+                    <!-- Card 03 -->
+                    <div class="project-card" data-index="03">
+                        <div class="project-thumb">
+                            <img src="readme-hero.webp" alt="Roomify">
+                            <div class="project-thumb-overlay"></div>
+                        </div>
+                        <div class="project-card-inner">
+                            <h3 class="project-title">Roomify — Visualizador IA</h3>
+                            <p class="project-desc">Plataforma web que usa IA para transformar plantas baixas 2D em
+                                renders 3D fotorrealistas. Upload, geração com DALL-E 3, slider antes/depois interativo
+                                e exportação da imagem.</p>
+                            <div class="project-tags">
+                                <span class="ptag">React</span><span class="ptag">TypeScript</span><span
+                                    class="ptag">DALL-E 3</span><span class="ptag">Puter.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://roomify-neon.vercel.app" target="_blank"
+                                    class="project-link-btn github-btn"><i class="fab fa-github"></i> Live Demo</a>
+                                <a href="#" target="_blank" class="project-link-btn demo-btn">Details <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-card-glow"></div>
+                    </div>
+
+                    <!-- Card 04 -->
+                    <div class="project-card" data-index="04">
+                        <div class="project-thumb">
+                            <img src="cine.png" alt="CineSystem">
+                            <div class="project-thumb-overlay"></div>
+                        </div>
+                        <div class="project-card-inner">
+                            <h3 class="project-title">CineSystem — API REST</h3>
+                            <p class="project-desc">API REST para gerenciamento de cinema — filmes, salas e sessões.
+                                Projeto em grupo na faculdade UNIPÊ, com validação Zod e documentação Swagger.</p>
+                            <div class="project-tags">
+                                <span class="ptag">Node.js</span><span class="ptag">TypeScript</span><span
+                                    class="ptag">Prisma</span><span class="ptag">PostgreSQL</span>
+                            </div>
+                            <div class="project-collab">
+                                <span class="collab-label">Colaboradores:</span>
+                                <div class="collab-chips">
+                                    <a href="https://github.com/ClaraQrz" target="_blank" class="chip">Clara</a>
+                                    <a href="https://github.com/Leandralimas" target="_blank" class="chip">Leandra
+                                        Lima</a>
+                                    <a href="https://github.com/EduardaMFerreira" target="_blank" class="chip">Eduarda
+                                        Ferreira</a>
+                                </div>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/EduardaMFerreira/CineSystem" target="_blank"
+                                    class="project-link-btn github-btn"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="#" target="_blank" class="project-link-btn demo-btn">Details <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-card-glow"></div>
+                    </div>
+
+                    <!-- Card 05 -->
+                    <div class="project-card" data-index="05">
+                        <div class="project-thumb">
+                            <img src="sushi saboroso.png" alt="Sushi Saboroso">
+                            <div class="project-thumb-overlay"></div>
+                        </div>
+                        <div class="project-card-inner">
+                            <h3 class="project-title">Sushi Saboroso — Restaurante</h3>
+                            <p class="project-desc">Website completo de restaurante japonês com hero em vídeo, cardápio
+                                interativo com filtro por categoria, lightbox nas fotos dos pratos com swipe e navegação
+                                por teclado, e newsletter com validação.</p>
+                            <div class="project-tags">
+                                <span class="ptag">HTML5</span><span class="ptag">CSS3</span><span
+                                    class="ptag">JavaScript</span><span class="ptag">RemixIcon</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://sushi-saboroso.vercel.app" target="_blank"
+                                    class="project-link-btn github-btn"><i class="fab fa-github"></i> Live Demo</a>
+                                <a href="#" target="_blank" class="project-link-btn demo-btn">Details <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-card-glow"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXPERIÊNCIAS ===== -->
+        <section id="Experiências">
+            <div class="container">
+                <p class="section-label">TRAJETÓRIA</p>
+                <h2 class="section-title">Experiências<span class="emphasis">.</span></h2>
+                <p class="section-subtitle">Minha jornada profissional até aqui</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                            <div class="dot-ring"></div>
+                        </div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-card-bg"></div>
+                            <div class="timeline-header">
+                                <div class="timeline-company-badge">Ada Tech</div>
+                                <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Out 2025 – Abr
+                                    2026</span>
+                            </div>
+                            <h3 class="timeline-role">Desenvolvimento <span class="emphasis">Front-end</span></h3>
+                            <p class="timeline-company-desc">Programa Elas+ Tech — Ada Tech × CAIXA × Artemisia</p>
+                            <ul class="timeline-list">
+                                <li><i class="fas fa-check"></i> Aprovada entre mais de 6.500 candidatas</li>
+                                <li><i class="fas fa-check"></i> Formação intensiva com mentorias técnicas</li>
+                                <li><i class="fas fa-check"></i> Projetos práticos com foco em UX</li>
+                                <li><i class="fas fa-check"></i> HTML5, CSS3, JavaScript, React, Git e Figma</li>
+                            </ul>
+                            <div class="timeline-tech-chips">
+                                <span>React</span><span>JavaScript</span><span>Figma</span><span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                            <div class="dot-ring"></div>
+                        </div>
+                        <div class="timeline-connector"></div>
+                        <div class="timeline-card current">
+                            <div class="timeline-card-bg"></div>
+                            <div class="timeline-header">
+                                <div class="timeline-company-badge">Fábrica de Software</div>
+                                <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Mar 2025 –
+                                    Presente</span>
+                            </div>
+                            <h3 class="timeline-role">Squad Leader <span class="emphasis">Front-end</span></h3>
+                            <p class="timeline-company-desc">UBTech Office / UNIPÊ — Projeto Jogos Empresariais</p>
+                            <ul class="timeline-list">
+                                <li><i class="fas fa-check"></i> Liderança de squad e qualidade das entregas</li>
+                                <li><i class="fas fa-check"></i> Revisão de código com foco em usabilidade</li>
+                                <li><i class="fas fa-check"></i> Definição de padrões visuais e design system</li>
+                                <li><i class="fas fa-check"></i> Mentoria e boas práticas para o time</li>
+                            </ul>
+                            <div class="timeline-tech-chips">
+                                <span>React</span><span>TypeScript</span><span>UX/UI</span><span>Liderança</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item last">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                            <div class="dot-ring"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-card-bg"></div>
+                            <div class="timeline-header">
+                                <div class="timeline-company-badge">PM-PB</div>
+                                <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Ago 2024 – Dez
+                                    2024</span>
+                            </div>
+                            <h3 class="timeline-role">Desenvolvedora <span class="emphasis">Front-end</span></h3>
+                            <p class="timeline-company-desc">Polícia Militar da Paraíba — Sistema interno</p>
+                            <ul class="timeline-list">
+                                <li><i class="fas fa-check"></i> Interfaces responsivas para sistema de viaturas</li>
+                                <li><i class="fas fa-check"></i> Cadastro, atualização e listagem de viaturas</li>
+                                <li><i class="fas fa-check"></i> Padrões visuais, acessibilidade e performance</li>
+                                <li><i class="fas fa-check"></i> HTML, CSS, JavaScript, React, TypeScript</li>
+                            </ul>
+                            <div class="timeline-tech-chips">
+                                <span>React</span><span>TypeScript</span><span>CSS</span><span>Acessibilidade</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTATO ===== -->
+        <section id="contato">
+            <div class="container">
+                <p class="section-label">CONTATO</p>
+                <h2 class="section-title">Vamos conversar?</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-details">
+                                <h3>E-mail</h3>
+                                <p>eduarda10.barros@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-details">
+                                <h3>Localização</h3>
+                                <p>Paraíba, João Pessoa</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                            <div class="contact-details">
+                                <h3>LinkedIn</h3>
+                                <p>/in/eduarda-barroscb</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-cta-wrapper">
+                        <div class="contact-cta-content">
+                            <h3>Entre em contato para conversarmos sobre oportunidades e colaboração.</h3>
+                            <p>Se você busca alguém comprometida, em constante evolução e apaixonada por tecnologia,
+                                vamos conversar.</p>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=eduarda10.barros@gmail.com&su=Olá! Gostaria de conversar&body=Olá Eduarda,%0D%0A%0D%0AGostaria de conversar sobre:"
+                                target="_blank" class="email-direct-btn">
+                                Enviar Mensagem <i class="fas fa-paper-plane"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        © 2025 - Portfólio de Eduarda Barros
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title">EDUARDA BARROS<span class="emphasis">.</span></h3>
+                <p class="footer-description">Desenvolvedora Front-end criando interfaces eficientes com React,
+                    TypeScript e muito cuidado com UX.</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero" data-section="hero">Início</a></li>
+                    <li><a href="#sobre-mim" data-section="sobre-mim">Sobre Mim</a></li>
+                    <li><a href="#habilidades" data-section="habilidades">Habilidades</a></li>
+                    <li><a href="#projetos" data-section="projetos">Projetos</a></li>
+                    <li><a href="#Experiências" data-section="Experiências">Experiências</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Redes Sociais</h4>
+                <ul class="footer-social">
+                    <li><a href="https://github.com/Eduardabarroscbg" target="_blank"><i class="fab fa-github"></i>
+                            GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/eduarda-barroscb/" target="_blank"><i
+                                class="fab fa-linkedin"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Eduarda Barros. Todos os direitos reservados.</p>
+            <p class="footer-credit">Feito com <span class="emphasis">♥</span> por Eduarda Barros</p>
+        </div>
     </footer>
 
-    <script>
-        const toggleButton = document.getElementById("theme-toggle");
-
-        toggleButton.addEventListener("click", () => {
-            document.body.classList.toggle("dark");
-
-            if (document.body.classList.contains("dark")) {
-                toggleButton.textContent = "🌙";
-            } else {
-                toggleButton.textContent = "☀️";
-            }
-        });
-    </script>
-
+    <script src="script.js"></script>
+    <script src="project-detail.js"></script>
 </body>
 
 </html>
