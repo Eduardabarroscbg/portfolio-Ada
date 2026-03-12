@@ -4,9 +4,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- ===== ANTI-FLASH: hide page instantly if loading a project URL ===== -->
-    <!-- Must be the FIRST script in <head>, before any CSS or rendering -->
     <script>
         (function () {
             var match = window.location.hash.match(/^#project-(\d+)$/);
@@ -18,7 +15,6 @@
             }
         })();
     </script>
-
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="project-detail.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,8 +117,8 @@
                 <div class="sobre-content">
                     <p class="sobre-text">Olá! Me chamo Eduarda Barros, tenho 20 anos e sou desenvolvedora front-end,
                         apaixonada por criar interfaces responsivas, intuitivas e eficientes, com foco na experiência do
-                        usuário. Tenho experiência com JavaScript, React e TypeScript, e estou sempre me
-                        atualizando para desenvolver aplicações modernas e acessíveis.</p>
+                        usuário. Tenho experiência com JavaScript, React e TypeScript, e estou sempre me atualizando
+                        para desenvolver aplicações modernas e acessíveis.</p>
                     <p class="sobre-text">Atualmente, curso Ciência da Computação no UNIPÊ – Campus João Pessoa e atuo
                         como Tech Leader de Front-end na Fábrica de Software, onde sou responsável por implementar
                         interfaces, criar layouts e definir padrões visuais e de usabilidade.</p>
@@ -257,9 +253,7 @@
                 <p class="section-label">TRABALHOS</p>
                 <h2 class="section-title">Projetos em Destaque</h2>
                 <p class="section-subtitle">Projetos que construí para aprender e crescer</p>
-
                 <div class="projects-grid">
-
                     <!-- Card 01 -->
                     <div class="project-card" data-index="01">
                         <div class="project-thumb">
@@ -269,11 +263,9 @@
                         <div class="project-card-inner">
                             <h3 class="project-title">Apple MacBook Landing Page</h3>
                             <p class="project-desc">Landing page inspirada no MacBook Pro da Apple, com modelos 3D
-                                interativos e animações avançadas baseadas em scroll.
-
-                                Desenvolvida com React, Three.js, GSAP e Tailwind CSS, a aplicação apresenta design
-                                responsivo, conteúdo localizado em português e uma experiência visual moderna focada em
-                                performance e interatividade.</p>
+                                interativos e animações avançadas baseadas em scroll. Desenvolvida com React, Three.js,
+                                GSAP e Tailwind CSS, a aplicação apresenta design responsivo, conteúdo localizado em
+                                português e uma experiência visual moderna focada em performance e interatividade.</p>
                             <div class="project-tags">
                                 <span class="ptag">React</span><span class="ptag">Three.js</span><span
                                     class="ptag">GSAP</span><span class="ptag">Tailwind</span>
@@ -288,7 +280,6 @@
                         </div>
                         <div class="project-card-glow"></div>
                     </div>
-
                     <!-- Card 02 -->
                     <div class="project-card" data-index="02">
                         <div class="project-thumb">
@@ -296,14 +287,13 @@
                             <div class="project-thumb-overlay"></div>
                         </div>
                         <div class="project-card-inner">
-                            <h3 class="project-title">Mercedes-AMG F1 </h3>
+                            <h3 class="project-title">Mercedes-AMG F1</h3>
                             <p class="project-desc">Projeto inspirado na equipe Mercedes-AMG Petronas Formula One Team,
                                 desenvolvido com React, Three.js e GSAP. A aplicação apresenta um visualizador 3D
                                 interativo do carro da equipe, animações baseadas em scroll e integração com a Ergast
-                                Developer API para exibir classificações reais de pilotos e construtores.
-
-                                Possui design responsivo com Tailwind CSS, navegação entre páginas com React Router e
-                                foco em uma experiência visual moderna e interativa.</p>
+                                Developer API para exibir classificações reais de pilotos e construtores. Possui design
+                                responsivo com Tailwind CSS, navegação entre páginas com React Router e foco em uma
+                                experiência visual moderna e interativa.</p>
                             <div class="project-tags">
                                 <span class="ptag">React</span><span class="ptag">Three.js</span><span
                                     class="ptag">GSAP</span><span class="ptag">API REST</span>
@@ -317,7 +307,6 @@
                         </div>
                         <div class="project-card-glow"></div>
                     </div>
-
                     <!-- Card 03 -->
                     <div class="project-card" data-index="03">
                         <div class="project-thumb">
@@ -342,7 +331,6 @@
                         </div>
                         <div class="project-card-glow"></div>
                     </div>
-
                     <!-- Card 04 -->
                     <div class="project-card" data-index="04">
                         <div class="project-thumb">
@@ -376,7 +364,6 @@
                         </div>
                         <div class="project-card-glow"></div>
                     </div>
-
                     <!-- Card 05 -->
                     <div class="project-card" data-index="05">
                         <div class="project-thumb">
@@ -401,7 +388,6 @@
                         </div>
                         <div class="project-card-glow"></div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -555,6 +541,7 @@
                     <li><a href="#habilidades" data-section="habilidades">Habilidades</a></li>
                     <li><a href="#projetos" data-section="projetos">Projetos</a></li>
                     <li><a href="#Experiências" data-section="Experiências">Experiências</a></li>
+                    <li><a href="#contato" data-section="contato">Contato</a></li>
                 </ul>
             </div>
             <div class="footer-col">
