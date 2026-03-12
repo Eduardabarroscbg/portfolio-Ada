@@ -38,7 +38,7 @@ const projectsData = {
     title: "Roomify<br>Visualizador IA",
     breadcrumb: "Roomify — Visualizador IA",
     description: "Plataforma web que utiliza inteligência artificial para transformar plantas baixas 2D em renders 3D fotorrealistas. O usuário faz upload da planta, escolhe o estilo e recebe a visualização gerada pelo DALL-E 3, com slider interativo antes/depois.",
-    image: "readme-hero.webp",
+    image: "Roomify.png",
     stats: { techs: "4", features: "4" },
     techs: ["React", "TypeScript", "DALL-E 3", "Puter.js"],
     features: [
