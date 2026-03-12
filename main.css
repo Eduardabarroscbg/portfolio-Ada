@@ -1360,7 +1360,6 @@ body>* {
     overflow: hidden;
 }
 
-/* FIX: stretch faz as duas colunas terem a mesma altura */
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1370,7 +1369,6 @@ body>* {
     z-index: 1;
 }
 
-/* FIX: centraliza os cards verticalmente na coluna esquerda */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -1435,7 +1433,6 @@ body>* {
     font-weight: 500;
 }
 
-/* FIX: wrapper estica para preencher a altura da coluna */
 .contact-cta-wrapper {
     display: flex;
     align-items: stretch;
@@ -1741,14 +1738,15 @@ footer {
         gap: 1.2rem;
     }
 
+    /* ✅ CORREÇÃO: centralizar texto da seção contato no mobile */
     .contact-cta-content {
-        text-align: left;
-        align-items: flex-start;
+        text-align: center;
+        align-items: center;
     }
 
     .contact-cta-content h3,
     .contact-cta-content p {
-        text-align: left;
+        text-align: center;
     }
 
     #global-blob-1 {
