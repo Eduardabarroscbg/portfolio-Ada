@@ -13,7 +13,7 @@ const projectsData = {
       "Gerenciamento de estado global com Zustand",
       "Conteúdo e preços totalmente localizados em PT-BR"
     ],
-    demo: "https://apple-macbook-landing-i9ljqvcur-eduardas-projects-ea372f5b.vercel.app",
+    demo: "https://apple-macbook-landing.vercel.app",
     github: "https://github.com/Eduardabarroscbg/apple-macbook-landing",
     collaborators: []
   },
@@ -92,7 +92,6 @@ const projectsData = {
 };
 
 // ==================== CREATE OVERLAY ====================
-// Topbar: só botão "Voltar" + "Projetos ›" sem repetir o nome do projeto
 const overlayHTML = `
 <div class="project-detail-overlay" id="project-detail-overlay">
   <div class="detail-backdrop" id="detail-backdrop"></div>
