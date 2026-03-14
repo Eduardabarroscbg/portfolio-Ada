@@ -13,7 +13,7 @@ const projectsData = {
       "Gerenciamento de estado global com Zustand",
       "Conteúdo e preços totalmente localizados em PT-BR"
     ],
-    demo: "https://apple-macbook-landing-jiyq.vercel.app?_vercel_share=fInlNse8QsG8fmak37Po2cejTYgXd6AA",
+    demo: "https://apple-macbook-landing.vercel.app?_vercel_share=DL2yxTLY1MxgVXWANlyJhARiIeOGwM91",
     github: "https://github.com/Eduardabarroscbg/apple-macbook-landing",
     collaborators: []
   },
