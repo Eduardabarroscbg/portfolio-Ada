@@ -47,7 +47,7 @@ const projectsData = {
       "Autenticação e banco de dados via Puter.js",
       "Suporte ao Gemini como modelo alternativo"
     ],
-    demo: "https://roomify-neon.vercel.app",
+    demo: "https://roomify-ifk8.vercel.app?_vercel_share=OH6vgrwy4JxP9kH1Ia2j1oqMnMdJmsvG",
     github: "https://github.com/Eduardabarroscbg/Roomify",
     collaborators: []
   },
