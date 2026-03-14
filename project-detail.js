@@ -13,7 +13,7 @@ const projectsData = {
       "Gerenciamento de estado global com Zustand",
       "Conteúdo e preços totalmente localizados em PT-BR"
     ],
-    demo: "https://apple-macbook-landing.vercel.app",
+    demo: "https://apple-macbook-landing-i9ljqvcur-eduardas-projects-ea372f5b.vercel.app",
     github: "https://github.com/Eduardabarroscbg/apple-macbook-landing",
     collaborators: []
   },
@@ -47,7 +47,7 @@ const projectsData = {
       "Autenticação e banco de dados via Puter.js",
       "Suporte ao Gemini como modelo alternativo"
     ],
-    demo: "https://roomify-neon.vercel.app",
+    demo: "https://roomify-ifk8.vercel.app?_vercel_share=OH6vgrwy4JxP9kH1Ia2j1oqMnMdJmsvG",
     github: "https://github.com/Eduardabarroscbg/Roomify",
     collaborators: []
   },
